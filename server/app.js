@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 
 // modules
-// var recipes = require('./routes/recipes')
+var recipes = require('./routes/recipes')
 // var index = require('./routes/index');
 
 
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // express routes
-// app.use('/recipes', recipes);
+app.use('/recipes', recipes);
 // app.use('/', index);
 
 
