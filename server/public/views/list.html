@@ -1,0 +1,20 @@
+<section id="content" class="list">
+
+<h2>Recipes</h2>
+  <div ng-show="message" class="ng-hide">
+    <h3>No results returned.</h3>
+  </div>
+  <div ng-repeat="recipe in recipes | orderBy: name">
+    <div>
+      <p class="citations" ng-click="showRecipe(recipe._id)">{{recipe.title}}</p>
+      <modal-dialog show='recipe.dialogShown' dialog-title='{{recipe.title}}'>
+        <p ng-if="recipe.source == 'URL'">Citation: <a href="{{recipe.citation}}" target="_blank">{{recipe.citation}}</a></p>
+        <p ng-if="recipe.source != 'URL'">Citation: {{recipe.citation}}</p>
+        <p>Main Ingredient(s): {{mainIngred}}</p>
+        <p>Date made: {{recipe.date_made | date: 'MM/dd/yyyy'}}</p>
+        <p>Rating: {{recipe.rating}}</p>
+      </modal-dialog>
+</div>
+
+
+</section>

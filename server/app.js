@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 // modules
 var recipes = require('./routes/recipes')
-// var index = require('./routes/index');
+var index = require('./routes/index');
 
 
 // middleware
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 // express routes
 app.use('/recipes', recipes);
-// app.use('/', index);
+app.use('/', index);
 
 
 // start server

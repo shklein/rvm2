@@ -1,0 +1,108 @@
+body {
+  background: url('../views/images/counter.jpeg');
+  background-color: peachpuff;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Rock Salt', cursive;
+  color: black;
+  font-size: 30px;
+  font-weight: bolder;
+
+}
+
+h2 {
+  text-align: left;
+  font-family: 'Rock Salt', cursive;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Rock Salt', cursive;
+}
+ul {
+  list-style-type: none;
+}
+
+ol {
+  list-style-type: none;
+}
+
+li {
+  margin: 5px;
+}
+
+img {
+  height: 250px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+nav {
+  background-color: white;
+  padding: 10px;
+  border: solid 8px black;
+  border-radius: 8px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+
+nav li a {
+    padding: 0 10px;
+    color: blue;
+}
+
+nav li a:hover {
+  color: darkblue;
+}
+
+
+#content {
+    height: auto;
+    width: auto;
+    background-color: white;
+    border: solid 8px black;
+    border-radius: 8px;
+    clear: right;
+    align: center;
+    padding: 10px;
+    opacity: 1.0;
+
+}
+
+#content .list {
+  flex: 1;
+  display: flex;
+}
+
+.citations:hover {
+  text-decoration: underline;
+  cursor:pointer;
+  color: darkblue;
+}
+
+
+.calendar {
+  height: auto;
+  width: auto;
+  background-color: white;
+  border: solid 8px black;
+  border-radius: 8px;
+  clear: right;
+  align: center;
+  padding: 10px;
+}
+
+footer {
+  font-family: 'Rock Salt', cursive;
+  font-weight: bolder;
+}

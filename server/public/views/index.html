@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rearview Menu: Dinner at a (Backwards) Glance</title>
+  <!--CSS-->
+  <link rel="stylesheet" href="../vendors/bootstrap.min.css" />
+  <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/ng-modal.css" />
+  <!--Calendar pieces-->
+  <link rel="stylesheet" href="../vendors/calendar/fullcalendar/dist/fullcalendar.css"/>
+<!-- jquery, moment, and angular have to get included before fullcalendar -->
+<script type="text/javascript" src="../vendors/calendar/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../vendors/calendar/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="../vendors/calendar/angular/angular.min.js"></script>
+<script type="text/javascript" src="../vendors/calendar/angular-ui-calendar/src/calendar.js"></script>
+<script type="text/javascript" src="../vendors/calendar/fullcalendar/dist/fullcalendar.min.js"></script>
+<script type="text/javascript" src="../vendors/calendar/fullcalendar/dist/gcal.js"></script>
+
+  <!--Angular-->
+  <script type="text/javascript" src="../vendors/angular.min.js"></script>
+  <script type="text/javascript" src="../vendors/angular-route.min.js"></script>
+  <script type="text/javascript" src="../scripts/clientapp.js"></script>
+  <script type="text/javascript" src="../vendors/ng-modal.min.js"></script>
+<!--Controllers-->
+  <!-- <script type="text/javascript" src="../scripts/controllers/postcontroller.js"></script>
+  <script type="text/javascript" src="../scripts/controllers/getcontroller.js"></script>
+  <script type="text/javascript" src="../scripts/controllers/calcontroller.js"></script>
+  <script type="text/javascript" src="../scripts/controllers/listcontroller.js"></script> -->
+
+</head>
+<body ng-app="myApp">
+  <div class="container">
+    <div class="row">
+        <header ng-include="'../views/templates/header.html'"></header>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <div ng-include="'../views/templates/nav.html'"></div>
+    </div>
+
+    <div class="col-md-8 text-center">
+      <main ng-view></main>
+    </div>
+
+    <div class="col-md-2"></div>
+  </div>
+
+  <div class="row">
+    <footer class="row text-center" ng-include="'../views/templates/footer.html'"></footer>
+  </div>
+
+</body>
+</html>
