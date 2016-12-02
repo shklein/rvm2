@@ -19,29 +19,29 @@ router.get('/', function (req, res) {
   });
 });
 
-// router.post('/', function (req, res) {
-//   var recipe = req.body;
-//   console.log(recipe);
-//   pg.connect(connectionString, function (err, client, done) {
-//     if (err) {
-//       res.sendStatus(500);
-//     }
-//
-//     client.query('INSERT INTO recipe (title, citation, source, rating) ' +
-//                   'VALUES ($1, $2, $3, $4)',
-//                    [recipe.title, recipe.citation, recipe.source, recipe.rating],
-//                  function (err, result) {
-//                    done();
-//
-//                    if (err) {
-//                      res.sendStatus(500);
-//                      return;
-//                    }
-//                    NEST NEW QUERY: INPUT RECIPE ID, DATE INTO DATE TABLE?
-//                    res.sendStatus(201);
-//                  });
-//   });
-// });
+router.post('/', function (req, res) {
+  var recipe = req.body;
+  console.log(recipe);
+  pg.connect(connectionString, function (err, client, done) {
+    if (err) {
+      res.sendStatus(500);
+    }
+
+    client.query('INSERT INTO recipe (title, citation, source, rating) ' +
+                  'VALUES ($1, $2, $3, $4)',
+                   [recipe.title, recipe.citation, recipe.source, recipe.rating],
+                 function (err, result) {
+                   done();
+
+                   if (err) {
+                     res.sendStatus(500);
+                     return;
+                   }
+                   //NEST NEW QUERY: INPUT RECIPE ID, DATE INTO DATE TABLE?
+                   res.sendStatus(201);
+                 });
+  });
+});
 //
 // router.delete('/delete/:id', function(req, res) {
 //     var id = req.params.id;
