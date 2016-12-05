@@ -24,6 +24,7 @@ router.post('/', function (req, res) {
   console.log(recipe);
   pg.connect(connectionString, function (err, client, done) {
     if (err) {
+      console.log(err);
       res.sendStatus(500);
     }
 
@@ -38,6 +39,7 @@ router.post('/', function (req, res) {
                      return;
                    }
                    //NEST NEW QUERY: INPUT RECIPE ID, DATE INTO DATE TABLE?
+                   console.log('Data added');
                    res.sendStatus(201);
                  });
   });
