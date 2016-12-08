@@ -21,6 +21,7 @@ router.get('/', function (req, res) {
 
 router.post('/', function (req, res) {
   var recipe = req.body;
+  var recipe_id = 0;
   console.log(recipe);
   pg.connect(connectionString, function (err, client, done) {
     if (err) {
@@ -29,18 +30,27 @@ router.post('/', function (req, res) {
     }
 
     client.query('INSERT INTO recipe (title, citation, source, rating) ' +
-                  'VALUES ($1, $2, $3, $4)',
+                  'VALUES ($1, $2, $3, $4) RETURNING id INTO recipe_id',
                    [recipe.title, recipe.citation, recipe.source, recipe.rating],
                  function (err, result) {
-                   done();
 
                    if (err) {
                      res.sendStatus(500);
                      return;
                    }
-                   //NEST NEW QUERY: INPUT RECIPE ID, DATE INTO DATE TABLE?
-                   console.log('Data added');
+                   console.log(recipe_id);
+                  //  client.query('INSERT INTO dates (date_made, recipe_id) ' + 'VALUES ($1, $2)',
+                  //  [recipe.date_made, recipe_id],
+                  // function (err, result) {
+                  //   done();
+                  //   if (err) {
+                  //     res.sendStatus(500);
+                  //     return;
+                  //   }
+
                    res.sendStatus(201);
+                   //})
+
                  });
   });
 });

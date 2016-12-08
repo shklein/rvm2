@@ -15,7 +15,7 @@ getRecipes();
       .then(function (response) {
       response.data.forEach(function (recipe) {
           recipe.dialogShown = false;
-          recipe.date_made = new Date(recipe.date_made);
+          //recipe.date_made = new Date(recipe.date_made);
         });
       $scope.recipes = response.data;
       console.log('GET /recipes', response.data);
