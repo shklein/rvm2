@@ -30,7 +30,7 @@ router.post('/', function (req, res) {
     }
 
     client.query('INSERT INTO recipe (title, citation, source, rating) ' +
-                  'VALUES ($1, $2, $3, $4) RETURNING id INTO recipe_id',
+                  'VALUES ($1, $2, $3, $4) RETURNING id',
                    [recipe.title, recipe.citation, recipe.source, recipe.rating],
                  function (err, result) {
 
@@ -38,7 +38,7 @@ router.post('/', function (req, res) {
                      res.sendStatus(500);
                      return;
                    }
-                   console.log(recipe_id);
+                   console.log(result.rows[0].id);
                   //  client.query('INSERT INTO dates (date_made, recipe_id) ' + 'VALUES ($1, $2)',
                   //  [recipe.date_made, recipe_id],
                   // function (err, result) {
