@@ -1,7 +1,7 @@
 myApp.controller('GetController', ['$scope', '$http', function($scope, $http )
 
 {
-  $scope.searchTerm = ["Title", "Main Ingredient", "Rating"];
+  $scope.searchTerm = ["Title", "Rating"];
   $scope.recipes = [];
   $scope.eventSources = [];
   $scope.textBox = false;
@@ -30,8 +30,6 @@ myApp.controller('GetController', ['$scope', '$http', function($scope, $http )
 
     if ($scope.selectedSource == "Title") {
       query = '/recipes?title=' + $scope.keyword;
-    } else if ($scope.selectedSource == "Main Ingredient") {
-      query = '/recipes?mainIngred=' + $scope.keyword;
     } else {
       query = '/recipes?rating=' + $scope.rating;
     };
