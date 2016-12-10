@@ -12,8 +12,6 @@ router.get('/', function (req, res) {
     client.query('SELECT * FROM recipe', function (err, result) {
       done();
 
-      console.log(result.rows);
-
       res.send(result.rows);
     });
   });
@@ -21,7 +19,6 @@ router.get('/', function (req, res) {
 
 router.post('/', function (req, res) {
   var recipe = req.body;
-  var recipe_id = 0;
   console.log(recipe);
   pg.connect(connectionString, function (err, client, done) {
     if (err) {
@@ -38,18 +35,18 @@ router.post('/', function (req, res) {
                      res.sendStatus(500);
                      return;
                    }
-                   console.log(result.rows[0].id);
-                  //  client.query('INSERT INTO dates (date_made, recipe_id) ' + 'VALUES ($1, $2)',
-                  //  [recipe.date_made, recipe_id],
-                  // function (err, result) {
-                  //   done();
-                  //   if (err) {
-                  //     res.sendStatus(500);
-                  //     return;
-                  //   }
-
+                   var recipe_id = result.rows[0].id;
+                   client.query('INSERT INTO dates (date_made, recipe_id) ' + 'VALUES ($1, $2)',
+                   [recipe.date_made, recipe_id],
+                  function (err, result) {
+                    done();
+                    if (err) {
+                      res.sendStatus(500);
+                      return;
+                    }
+                    console.log('Date saved');
                    res.sendStatus(201);
-                   //})
+                   })
 
                  });
   });
