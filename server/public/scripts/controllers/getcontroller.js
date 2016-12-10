@@ -62,6 +62,7 @@ $scope.showRecipe = function (id) {
     });
   };
 
+//resolve: repeat listings, all dialog boxes opening
 
 
 }]);
