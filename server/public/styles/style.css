@@ -1,6 +1,5 @@
 body {
-  background: url('../views/images/counter.jpeg');
-  background-color: peachpuff;
+  background-color: silver;
 }
 
 h1 {
@@ -46,6 +45,7 @@ nav {
   padding: 10px;
   border: solid 8px black;
   border-radius: 8px;
+  margin-top: 25px;
 }
 
 nav ul {
@@ -72,10 +72,12 @@ nav li a:hover {
     background-color: white;
     border: solid 8px black;
     border-radius: 8px;
+    box-shadow: 10px 10px 5px #888888;
     clear: right;
     align: center;
     padding: 10px;
     opacity: 1.0;
+    margin-top: 25px;
 
 }
 
@@ -105,4 +107,6 @@ nav li a:hover {
 footer {
   font-family: 'Rock Salt', cursive;
   font-weight: bolder;
+  margin-top: 25px;
+
 }
