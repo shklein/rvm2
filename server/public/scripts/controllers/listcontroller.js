@@ -30,7 +30,7 @@ getRecipes();
 
 $scope.showRecipe = function (id) {
   $scope.recipes.forEach(function (rec) {
-      if (rec._id == id) {
+      if (rec.id == id) {
         rec.dialogShown = true;
       } else {
         rec.dialogShown = false;

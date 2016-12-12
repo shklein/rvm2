@@ -6,7 +6,7 @@
   </div>
   <div ng-repeat="recipe in recipes | orderBy: name">
     <div>
-      <p class="citations" ng-click="showRecipe(recipe._id)">{{recipe.title}}</p>
+      <p class="citations" ng-click="showRecipe(recipe.id)">{{recipe.title}}</p>
       <modal-dialog show='recipe.dialogShown' dialog-title='{{recipe.title}}'>
         <p ng-if="recipe.source == 'URL'">Citation: <a href="{{recipe.citation}}" target="_blank">{{recipe.citation}}</a></p>
         <p ng-if="recipe.source != 'URL'">Citation: {{recipe.citation}}</p>

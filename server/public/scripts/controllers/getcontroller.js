@@ -52,7 +52,7 @@ myApp.controller('GetController', ['$scope', '$http', function($scope, $http )
 
 $scope.showRecipe = function (id) {
   $scope.recipes.forEach(function (rec) {
-      if (rec._id == id) {
+      if (rec.id == id) {
         rec.dialogShown = true;
       } else {
         rec.dialogShown = false;
@@ -62,7 +62,7 @@ $scope.showRecipe = function (id) {
     });
   };
 
-//resolve: repeat listings, all dialog boxes opening
+//resolve: repeat listings
 
 
 }]);

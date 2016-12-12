@@ -19,7 +19,7 @@ myApp.controller('CalController', ['$scope', '$http', '$compile', 'uiCalendarCon
           });
 
             $scope.recipes = response.data;
-        
+
 
       });
 };
@@ -34,7 +34,7 @@ myApp.controller('CalController', ['$scope', '$http', '$compile', 'uiCalendarCon
     /* alert on eventClick */
     $scope.alertOnEventClick = function( date, jsEvent, view){
       $scope.recipes.forEach(function (rec) {
-          if (rec._id == date.recipe._id) {
+          if (rec.id == date.recipe.id) {
             date.recipe.dialogShown = true;
 
           }

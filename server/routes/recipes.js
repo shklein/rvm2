@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
       res.sendStatus(500);
     }
 
-    client.query('SELECT title, citation, source, rating, date_made FROM recipe ' +
+    client.query('SELECT title, citation, source, rating, date_made, recipe.id FROM recipe ' +
     'JOIN dates ' + 'ON recipe.id = dates.recipe_id', function (err, result) {
       done();
 
