@@ -12,6 +12,8 @@
         <p ng-if="recipe.source != 'URL'">Citation: {{recipe.citation}}</p>
         <p>Last made: {{recipe.date_made | date: 'MM/dd/yyyy'}}</p>
         <p>Rating: {{recipe.rating}}</p>
+        <input type="checkbox" ng-model="new_date" />Make again?<br />
+        <!--if checked, submit new date-->
       </modal-dialog>
 </div>
 
