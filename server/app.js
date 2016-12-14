@@ -6,7 +6,8 @@ var bodyParser = require('body-parser');
 
 
 // modules
-var recipes = require('./routes/recipes')
+var recipes = require('./routes/recipes');
+var dates = require('./routes/dates');
 var index = require('./routes/index');
 
 
