@@ -8,8 +8,8 @@
     <div>
       <p class="citations" ng-click="showRecipe(recipe.id)">{{recipe.title}}</p>
       <modal-dialog show='recipe.dialogShown' dialog-title='{{recipe.title}}'>
-        <p ng-if="recipe.source == 'URL'">Citation: <a href="{{recipe.citation}}" target="_blank">{{recipe.citation}}</a></p>
-        <p ng-if="recipe.source != 'URL'">Citation: {{recipe.citation}}</p>
+        <p ng-if="recipe.source == '3'">Citation: <a href="{{recipe.citation}}" target="_blank">{{recipe.citation}}</a></p>
+        <p ng-if="recipe.source != '3'">Citation: {{recipe.citation}}</p>
         <p>Last made: {{recipe.date_made | date: 'MM/dd/yyyy'}}</p>
         <p>Rating: {{recipe.rating}}</p>
         <input type="checkbox" ng-model="new_date" />Make again?<br />

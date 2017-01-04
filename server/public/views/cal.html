@@ -2,8 +2,8 @@
   <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div>
   <div ng-repeat="recipe in recipes">
       <modal-dialog show='recipe.dialogShown' dialog-title='{{recipe.title}}'>
-        <p ng-if="recipe.source == 'URL'">Citation: <a href="{{recipe.citation}}" target="_blank">{{recipe.citation}}</a></p>
-        <p ng-if="recipe.source != 'URL'">Citation: {{recipe.citation}}</p>
+        <p ng-if="recipe.source == '3'">Citation: <a href="{{recipe.citation}}" target="_blank">{{recipe.citation}}</a></p>
+        <p ng-if="recipe.source != '3'">Citation: {{recipe.citation}}</p>
         <p>Main Ingredient(s): {{recipe.mainIngred}}</p>
         <p>Date made: {{recipe.date_made | date: 'MM/dd/yyyy'}}</p>
         <p>Rating: {{recipe.rating}}</p>
